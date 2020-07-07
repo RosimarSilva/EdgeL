@@ -1,0 +1,22 @@
+QMAKE_CXX.INCDIRS = \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/imx6guf-guf-linux-gnueabi/usr/include/c++/7.3.0 \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/imx6guf-guf-linux-gnueabi/usr/include/c++/7.3.0/arm-guf-linux-gnueabi \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/imx6guf-guf-linux-gnueabi/usr/include/c++/7.3.0/backward \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/x86_64-gufsdk-linux/usr/lib/arm-guf-linux-gnueabi/gcc/arm-guf-linux-gnueabi/7.3.0/include \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/imx6guf-guf-linux-gnueabi/usr/lib/gcc/arm-guf-linux-gnueabi/7.3.0/include \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/x86_64-gufsdk-linux/usr/lib/arm-guf-linux-gnueabi/gcc/arm-guf-linux-gnueabi/7.3.0/include-fixed \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/imx6guf-guf-linux-gnueabi/usr/include
+QMAKE_CXX.LIBDIRS = \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/x86_64-gufsdk-linux/usr/lib/arm-guf-linux-gnueabi/gcc/arm-guf-linux-gnueabi/7.3.0 \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/imx6guf-guf-linux-gnueabi/lib \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/imx6guf-guf-linux-gnueabi/usr/lib/arm-guf-linux-gnueabi/7.3.0 \
+    /opt/guf/GUF-Yocto-rocko-1.0-0-sdk/sysroots/imx6guf-guf-linux-gnueabi/usr/lib
+QMAKE_CXX.QT_COMPILER_STDCXX = 201402L
+QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 7
+QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 3
+QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 0
+QMAKE_CXX.COMPILER_MACROS = \
+    QT_COMPILER_STDCXX \
+    QMAKE_GCC_MAJOR_VERSION \
+    QMAKE_GCC_MINOR_VERSION \
+    QMAKE_GCC_PATCH_VERSION
