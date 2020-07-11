@@ -101,7 +101,7 @@ Connections{
     {
        telaInit.state = "Init2"
        serial.openSerial("ttymxc0",false)
-      // serial.writeBytes([0xA5,0x06,0x0a,0x00,0xc4,0x49],1);// habilita o drive do led
+       serial.writeBytes([0xA5,0x06,0x0a,0x00,0xc4,0x49],1);// habilita o drive do led
        inicia.setTime();
        apagaLEd.start();
     }

@@ -4,6 +4,7 @@ Item {
     property int temperatura: 0
     property int  min: 0
     property int percento: 0
+    property int  numSerie: 0
     Image {
         id: systemInfo
         x: 40
@@ -29,6 +30,13 @@ Item {
             }
         }
 
+        Connections{  //recebe o numero de serie do c++
+                target: serial
+            onSerialScreen:{numSerie = serial.myNumberSerie;
+           }
+        }
+
+
         Text {
             id: element
             x: 418
@@ -37,6 +45,10 @@ Item {
             text: qsTr("Total hours and minutes")
             font.pixelSize: 20
         }
+
+        //text of serial number
+
+             }
 
         Text {
             id: element1
@@ -151,10 +163,40 @@ Item {
                                                 horizontalAlignment: Text.AlignVCenter
                                                 font.pointSize: 20
                                             }
+
+                                            Text {
+                                                id: element6
+                                                x: 145
+                                                y: 379
+                                                color: "#00000000"
+                                                text: qsTr("Text")
+                                                font.pixelSize: 12
+                                            }
+
+                                            Text {
+                                                id: element7
+                                                x: 158
+                                                y: 387
+                                                color: "#9be127"
+                                                text: qsTr("Software Version 1.7      Serial Number ")
+                                                font.pixelSize: 20
+
+                                                TextInput {
+                                                    id: textInput
+                                                    x: 400
+                                                    y: 3
+                                                    width: 80
+                                                    height: 20
+                                                    color: "#9be127"
+                                                    text: +numSerie;
+                                                    selectionColor: "#9be127"
+                                                    font.pixelSize: 17
+                                                }
+                                            }
 }
     }
 
-}
+
 
 
 /*##^##

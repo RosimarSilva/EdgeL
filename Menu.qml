@@ -1,8 +1,8 @@
 import QtQuick 2.0
 
 Item {
-    property int versaoSoftawre: 230620
-    property int  numSerie: 0
+    //property int versaoSoftawre: 230620
+   // property int  numSerie: 0
 //tela Menu
     Image {
         id: menu
@@ -16,28 +16,29 @@ Item {
             onClicked: {}
 
 
-            Connections{  //recebe o numero de serie do c++
-                    target: serial
-                onSerialScreen:{numSerie = serial.myNumberSerie;
-               }
-            }
+
 //ícone do brilho
             Image {
                 id: brilho
-                x: 649
+                x: 647
                 y: 13
                 fillMode: Image.PreserveAspectFit
                 source: "IconesBrilho/IconeBrilho.jpg"
                 MouseArea{
+                    anchors.bottomMargin: 0
+                    anchors.rightMargin: -21
+                    anchors.leftMargin: -22
                     anchors.fill: parent
                     onPressed: {parent.scale = 0.97;}
                     onReleased: {
                         root.state = "Brilhos"
                         parent.scale = 1.0;
+                        serial.activeTimerSlider();
+
                     }
                 }
             }
-        }
+
 
 //icone de voltar
         Image {
@@ -111,7 +112,7 @@ Item {
             }
         }
 //ícone si
-        Image {
+       Image {
             id: sI
             x: 142
             y: 191
@@ -121,44 +122,30 @@ Item {
                 anchors.fill: parent
                 onPressed: {parent.scale = 0.95;}
                 onReleased: {
-                     root.state = "Information"
+                    root.state = "Information"
                     parent.scale = 1.0;
 
                 }
             }
+       }
+
+        Text {
+            id: element
+            x: 629
+            y: 60
+            color: "#ecd9b9"
+            text: qsTr("Brightness")
+            font.pixelSize: 15
         }
 
 
-//text of software version
-            Text {
-                 x:520
-                  y: 390
-                 width: parent.width/2
-                height: 25
-                horizontalAlignment:  Text.AlignVCenter
-               font.pointSize: 15
-               color: "white"
-               text: +versaoSoftawre
-           }
-//text of serial number
-            Text {
-                x: 390
-                y: 390
-                 width: parent.width/2
-                horizontalAlignment:  Text.AlignVCenter
-                font.pointSize: 15
-                color: "white"
-                text: +numSerie;
-            }
-
-     }
-
-
-
-
+}
+}
 }
 
-/*##^## Designer {
+
+/*##^##
+Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
- ##^##*/
+##^##*/

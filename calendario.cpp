@@ -6,10 +6,13 @@ Calendario::Calendario(QObject *parent) :
 {
 //qDebug() << Q_FUNC_INFO;
      cu = new QTimer;
+    wait = new QTimer;
 
-     //this->readData();
+            //this->readData();
     connect(cu,&QTimer::timeout,this,&Calendario::readData);
-    cu->start(2000);
+    cu->start(30000);
+
+     connect(wait,&QTimer::timeout,this,&Calendario::chama);
 
 }
 
@@ -99,6 +102,11 @@ void Calendario::setFormatHora(const bool value)
 
     }
 }
+
+void Calendario::setInterval()
+{
+   wait->start(3000);
+}
 void Calendario::setFormatAmPm()
 {
    // qDebug()<< auxFormat;
@@ -116,6 +124,24 @@ void Calendario::amPM(void)
     h->stop();
 
     emit changeFormat();
+}
+
+void Calendario::updateSoftware()
+{
+    system("cp /media/sda1/EdgeL /usr/bin/");
+
+    system("umount /media/sda1/");
+}
+
+void Calendario::restartSystem()
+{
+    system("reboot");
+}
+
+void Calendario::chama()
+{
+    wait->stop();
+    emit tempo();
 }
 
 int Calendario::formatHora() const
@@ -302,7 +328,13 @@ void Calendario::setDate()
      system(date + horas);
 
      system("hwclock --systohc");
+
+   //   system("cp /media/sda1/EdgeL /usr/bin/");
+
+
      qDebug()<<horas;
+
+
 }
 
 

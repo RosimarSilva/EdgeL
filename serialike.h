@@ -44,6 +44,7 @@ public:
     Q_INVOKABLE void displayOff(void);
     Q_INVOKABLE void displayOn(void);
     Q_INVOKABLE void displayBrightness(const int luz);
+    Q_INVOKABLE void activeTimerSlider(void);
     Q_INVOKABLE void powerOfff(void);
     Q_INVOKABLE void init(void);
     Q_INVOKABLE void resetHoras(void);
@@ -94,6 +95,7 @@ signals:
      void tempLedChanged(void);
      void minChanged(void);
      void percentChanged(void);
+     void sliderTimer(void);
 
  public slots:
     Q_INVOKABLE  QList<int>readBytes(void);

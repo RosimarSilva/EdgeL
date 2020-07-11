@@ -97,5 +97,6 @@
         <file>Icones/system.png</file>
         <file>IconesConfig/edithourLamp.bmp</file>
         <file>Telas/systeminformation.bmp</file>
+        <file>Telas/updateSoftware.bmp</file>
     </qresource>
 </RCC>

@@ -120,7 +120,12 @@ void SerialIke::displayBrightness(const int luz)
 
         pathBacklightBrightness.write(QByteArray::number(luz));
         pathBacklightBrightness.close();
+    }
 }
+
+void SerialIke::activeTimerSlider()
+{
+   emit sliderTimer();
 }
 //desliga o equipamento
 void SerialIke::powerOfff()
@@ -203,7 +208,7 @@ void SerialIke::readFlash()
    qu = dadoSalvo[11];
    cin = dadoSalvo[12];
 
-    for(int i = 0;i< h_hour;i++)
+    for(int i = 0;i< 5;i++)
     {
       dadoSalvo[i] = ascII(dadoSalvo[i]);
        horaslampada = (horaslampada +dadoSalvo[i]);
@@ -561,14 +566,16 @@ void SerialIke::setSerialNumber( char number)
    {
      if(!conts) return;
        minutoLampada++;
-       setMin(minutoLampada);
-       if(minutoLampada > 60)
+      if(minutoLampada < 60) setMin(minutoLampada);
+       if(minutoLampada > 59)
        {
+
           horaslampada++;
           this->calcHoras();
-          writeFlash();
           this->setHorasLamp(horaslampada);
           minutoLampada = 0;
+          setMin(minutoLampada);
+          writeFlash();
        }
    }
 //retorna o numero da serial number

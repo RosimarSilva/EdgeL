@@ -35,6 +35,8 @@ public:
     void setHora(const int value);
     int hora() const;
    Q_INVOKABLE void setFormatHora(const bool value);
+
+   Q_INVOKABLE void setInterval(void);
     int formatHora()const;
 
 
@@ -51,9 +53,10 @@ public:
     Q_INVOKABLE void setDate(void);
 
     Q_INVOKABLE void setFormatAmPm(void);
-   Q_INVOKABLE void amPM(void);
+    Q_INVOKABLE void amPM(void);
+    Q_INVOKABLE void updateSoftware(void);
 
-
+   Q_INVOKABLE void restartSystem(void);
 
 signals:
     void changedDia();
@@ -62,6 +65,10 @@ signals:
     void changedHora();
     void changeMinuto();
     void changeFormat();
+    void tempo();
+
+ public slots:
+    void chama(void);
 
 private:
    char day;
@@ -75,6 +82,7 @@ private:
    bool m_format,auxFormat;
     QTimer *cu;
     QTimer *h;
+     QTimer *wait;
 
 };
 

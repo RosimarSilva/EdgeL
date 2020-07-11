@@ -84,10 +84,44 @@ Item {
              id: horass
              x: 369
              y: 264
-              color: "blue"
+             color: "blue"
              text: +serial.horasLampada;
              font.pixelSize: 60
          }
+
+     /*    Text {
+             id: update
+             x: 145
+             y: 193
+             color: "#9be127"
+             text: qsTr("Update Software")
+             font.pixelSize: 18
+         }
+         */
+
+         Text {
+             id: update
+             x: 145
+             y: 193
+             color: "#9be127"
+             text: qsTr("Software Update")
+             font.pixelSize: 19
+             MouseArea {
+                 id: mouseUpdate
+                 x: -13
+                 y: -18
+                 width: 165
+                 height: 56
+                 onPressed: {parent.scale = 0.95;}
+                 onReleased: {
+                     parent.scale = 1.0;
+                     root.state = "UpdateSoftware"
+                 }
+
+             }
+         }
+
+
 
 
       }

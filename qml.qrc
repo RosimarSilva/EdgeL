@@ -12,5 +12,8 @@
         <file>EditHours.qml</file>
         <file>PowerOff.qml</file>
         <file>SystemInfo.qml</file>
+        <file>UpdateSoftware.qml</file>
+        <file>Wait.qml</file>
+        <file>RemoveUsb.qml</file>
     </qresource>
 </RCC>

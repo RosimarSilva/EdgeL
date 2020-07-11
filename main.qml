@@ -65,6 +65,15 @@ Window {
             },
             State {
                 name: "Information"
+            },
+            State {
+                name: "UpdateSoftware"
+            },
+            State {
+                name: "Wait"
+            },
+             State {
+                name: "Remove"
             }
 
         ]
@@ -143,6 +152,25 @@ Window {
             id:info
             anchors.fill: parent
             visible: root.state == "Information"
+        }
+
+        UpdateSoftware
+        {
+            id:update
+            anchors.fill: parent
+            visible: root.state == "UpdateSoftware"
+        }
+        Wait
+        {
+            id:aguarde
+            anchors.fill: parent
+            visible: root.state == "Wait"
+        }
+        RemoveUsb
+        {
+            id:remo
+            anchors.fill: parent
+            visible: root.state == "Remove"
         }
 
 
